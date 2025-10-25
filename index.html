@@ -1,0 +1,701 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ezra Ngetich Korgoren — Bio</title>
+
+  <!-- Bootstrap CSS (layout & utilities) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Fonts: Inter for body, Great Vibes for cursive -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <style>
+    /* ---------------------------
+       THEME COLORS & BASE
+       --------------------------- */
+    :root{
+      --bg:#f6fbff;
+      --deep:#0f2940;       /* main deep blue */
+      --deep-2:#143a57;
+      --cyan:#0dcaf0;
+      --gold:#ffc107;
+      --muted:#6b7280;
+      --card:#ffffff;
+      --romance-grad: linear-gradient(135deg,#ffd6e8 0%, #e9d5ff 50%, #ffd6f0 100%);
+    }
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:var(--bg);
+      color:#071027;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+    a{color:inherit;text-decoration:none}
+
+    /* ---------------------------
+       NAVBAR (fixed)
+       --------------------------- */
+    .navbar{
+      background:rgba(15,41,64,0.96);
+      box-shadow:0 6px 20px rgba(15,41,64,0.12);
+      padding:0.6rem 1rem;
+    }
+    .navbar .navbar-brand{color:var(--gold);font-weight:800}
+    .nav-link{color:rgba(255,255,255,0.9) !important}
+    .nav-link:hover{color:var(--gold) !important}
+
+    /* ---------------------------
+       HERO: full, glowing, subtle particle
+       --------------------------- */
+    .hero{
+      min-height:76vh;
+      display:flex;
+      align-items:center;
+      padding:5.5rem 1rem;
+      background:
+        radial-gradient(1200px 400px at 10% 10%, rgba(13,110,253,0.12), transparent 8%),
+        radial-gradient(900px 300px at 90% 80%, rgba(13,110,253,0.06), transparent 10%),
+        linear-gradient(180deg, var(--deep), var(--deep-2));
+      color:#fff;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero::before, .hero::after{
+      content:"";
+      position:absolute;
+      width:1200px;height:1200px;
+      background: radial-gradient(circle, rgba(255,255,255,0.05), transparent 30%);
+      filter:blur(30px);
+      opacity:0.45;
+      animation: drift 18s linear infinite;
+      transform-origin:center;
+    }
+    .hero::after{right:-600px;bottom:-420px;animation-duration:21s;opacity:0.30}
+    .hero::before{left:-600px;top:-300px;opacity:0.45}
+    @keyframes drift{0%{transform:translateY(0) rotate(0)}50%{transform:translateY(26px) rotate(45deg)}100%{transform:translateY(0) rotate(0)}}
+
+    .hero-content{max-width:1100px;margin:0 auto;z-index:4}
+    .avatar{
+      width:180px;height:180px;border-radius:50%;object-fit:cover;border:6px solid rgba(255,193,7,0.95);box-shadow:0 20px 46px rgba(2,6,23,0.45);
+      transition:transform .45s cubic-bezier(.2,.9,.2,1);
+    }
+    .avatar:hover{transform:translateY(-6px) scale(1.02)}
+    .hero h1{font-size:2.6rem;margin-top:.25rem;letter-spacing:0.6px}
+    .hero .meta{color:rgba(255,255,255,0.85);margin-bottom:1rem}
+    .typewriter{display:inline-block;color:var(--cyan);font-weight:650}
+
+    .hero .cta .btn{
+      border-radius:50px;padding:10px 20px;font-weight:700;
+      box-shadow: 0 8px 24px rgba(2,6,23,0.24);
+    }
+
+    /* ---------------------------
+       ABOUT / EARLY LIFE  (paper texture vibe)
+       --------------------------- */
+    .early {
+      background: linear-gradient(180deg,#fff,#fbfdff);
+      padding:2.5rem;
+      border-radius:12px;
+      box-shadow:0 10px 30px rgba(12,34,56,0.06);
+      border:1px solid rgba(19,43,65,0.04);
+    }
+    .dropcap::first-letter{
+      float:left;font-size:3.4rem;line-height:1;margin-right:10px;color:var(--deep);
+      font-weight:800;font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    .stamp{
+      display:inline-block;background:linear-gradient(90deg, rgba(13,110,253,0.06), rgba(13,110,253,0.02));
+      color:var(--deep);padding:.45rem .8rem;border-radius:999px;border:1px dashed rgba(13,110,253,0.12);
+      font-weight:600;font-size:.9rem;margin-top:1rem;
+    }
+
+    /* ---------------------------
+       PRIMARY SCHOOL: playful cards
+       --------------------------- */
+    .primary{
+      padding:1rem 0;
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem;
+    }
+    .school-card{
+      background:linear-gradient(180deg,#fff,#fbfdff);
+      border-radius:14px;padding:1.15rem;border:1px solid rgba(3,10,26,0.04);
+      transition:transform .35s ease, box-shadow .35s ease;
+    }
+    .school-card:hover{transform:translateY(-8px);box-shadow:0 18px 45px rgba(3,10,26,0.06)}
+    .school-card .icon{
+      width:52px;height:52px;border-radius:10px;background:linear-gradient(180deg,var(--cyan),var(--deep));
+      display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:1.35rem;margin-bottom:.6rem;
+    }
+
+    /* ---------------------------
+       SECONDARY: dark dramatic + highlight of setback/recovery
+       --------------------------- */
+    .secondary{
+      padding:2rem;border-radius:12px; color:#fff;
+      background: linear-gradient(180deg,#061226 0%, #0f2940 100%);
+      box-shadow:0 10px 30px rgba(2,6,23,0.35);
+    }
+    .secondary .panel{
+      background:rgba(255,255,255,0.04);padding:1rem;border-radius:10px;border-left:6px solid rgba(255,255,255,0.04)
+    }
+    .card-warning{
+      border-left:6px solid #ff4d4f;background:linear-gradient(180deg, rgba(255,77,79,0.06), rgba(0,0,0,0.02));color:#fff;padding:1rem;border-radius:10px;
+      box-shadow:0 6px 20px rgba(255,77,79,0.06);
+    }
+    .card-success{
+      border-left:6px solid #28a745;background:linear-gradient(180deg, rgba(40,167,69,0.04), rgba(0,0,0,0.02));color:#fff;padding:1rem;border-radius:10px;
+      box-shadow:0 8px 28px rgba(40,167,69,0.06);
+    }
+
+    /* ---------------------------
+       UNIVERSITY ERA: academic deep-blue + gold accents
+       --------------------------- */
+    .uni{
+      background: linear-gradient(180deg,#042033 0%, #06283b 100%);
+      color:#fff;padding:2rem;border-radius:12px;box-shadow:0 12px 40px rgba(2,6,23,0.28);
+      border-left:6px solid rgba(255,193,7,0.12);
+    }
+    .uni h3{color:var(--gold);font-weight:700}
+    .uni .badge-accent{background:linear-gradient(90deg,var(--gold), #ffd966);color:#071027;font-weight:700;border-radius:8px;padding:.35rem .6rem}
+    .uni .timeline-uni{margin-top:1rem}
+    .uni .uni-item{background:rgba(255,255,255,0.03);padding:1rem;border-radius:10px;margin-bottom:1rem;border-left:6px solid rgba(255,193,7,0.08)}
+
+    /* ---------------------------
+       SKILLS: animated progress
+       --------------------------- */
+    .skills .progress{height:12px;border-radius:8px;background:rgba(255,255,255,0.06)}
+    .skills .progress .progress-bar{
+      transition:width 1.4s cubic-bezier(.2,.9,.2,1);
+      background:linear-gradient(90deg,var(--cyan),var(--gold));
+    }
+
+    /* ---------------------------
+       PROJECTS: flip cards
+       --------------------------- */
+    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+    .flip-card{perspective:1200px;height:220px}
+    .flip-inner{
+      transition:transform .75s cubic-bezier(.2,.9,.2,1);
+      transform-style:preserve-3d;position:relative;height:100%;
+    }
+    .flip-card:hover .flip-inner{transform:rotateY(180deg)}
+    .flip-front, .flip-back{
+      position:absolute;inset:0;border-radius:12px;padding:1rem;backface-visibility:hidden;
+      box-shadow:0 10px 30px rgba(2,6,23,0.08);
+    }
+    .flip-front{background:linear-gradient(180deg,#fff,#fbfdff);color:#0b1720;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+    .flip-back{background:linear-gradient(180deg,var(--deep),var(--deep-2));color:#fff;transform:rotateY(180deg);display:flex;flex-direction:column;justify-content:center}
+
+    /* ---------------------------
+       GALLERY: polished
+       --------------------------- */
+    .gallery .img-wrap{border-radius:12px;overflow:hidden;box-shadow:0 12px 30px rgba(2,6,23,0.12)}
+    .gallery img{display:block;width:100%;height:200px;object-fit:cover;transition:transform .35s ease, box-shadow .35s ease}
+    .gallery img:hover{transform:scale(1.03);box-shadow:0 20px 60px rgba(2,6,23,0.18)}
+
+    /* ---------------------------
+       QUOTES
+       --------------------------- */
+    .quote-hero{background:linear-gradient(135deg,#fff8e1,#fff3cd);padding:1.6rem;border-radius:12px}
+    .quote-hero blockquote{font-family: Georgia, 'Times New Roman', Times, serif;font-size:1.15rem;color:#2b2b2b;margin:0}
+
+    /* ---------------------------
+       CONTACT & FOOTER
+       --------------------------- */
+    .contact-card{border-radius:12px;box-shadow:0 10px 30px rgba(2,6,23,0.06);border:1px solid rgba(3,10,26,0.04)}
+    footer{background:linear-gradient(180deg,#081526 0%, #0f2940 100%);color:#fff;padding:2.2rem 1rem;border-top:6px solid var(--gold)}
+    .social-icons a{color:rgba(255,255,255,0.85);font-size:1.3rem;margin-right:1rem;transition:all .25s}
+    .social-icons a:hover{transform:translateY(-4px);color:var(--gold);text-shadow:0 6px 18px rgba(255,193,7,0.18)}
+
+    /* small screens adjustments */
+    @media (max-width:767px){
+      .hero{padding:3.5rem 1rem}
+      .hero h1{font-size:2rem}
+      .avatar{width:140px;height:140px}
+    }
+    .full-image-section {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #000;  /* optional black background behind */
+  text-align: center;
+}
+
+.full-image-section .full-img {
+  width: 100%;
+  height: auto;         /* keeps proportions */
+  object-fit: contain;  /* full image, no cropping */
+}
+
+  .avatar {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 3px solid #ff4d6d; /* romantic accent */
+    object-fit: cover;
+    box-shadow: 0 0 15px rgba(255, 77, 109, 0.4);
+    transition: all 0.4s ease;
+    cursor: pointer;
+    position: relative;
+    animation: glowPulse 3s ease-in-out infinite;
+  }
+
+  .avatar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(255, 77, 109, 0.6);
+    border-color: #ff6b81;
+  }
+
+  @keyframes glowPulse {
+    0%, 100% {
+      box-shadow: 0 0 15px rgba(255, 77, 109, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 25px rgba(255, 77, 109, 0.7);
+    }
+  }
+
+  /* Optional: Center and spacing */
+  .profile-section {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Ezra Korgoren</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#primary">Primary</a></li>
+          <li class="nav-item"><a class="nav-link" href="#secondary">Secondary</a></li>
+          <li class="nav-item"><a class="nav-link" href="#university">University</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero" id="top">
+    <div class="container hero-content text-center">
+
+<div style="text-align:center; margin-top:25px;">
+  <img 
+    id="profileAvatar"
+    src="me.jpg" 
+    alt="Ezra photo"
+    title="Click to replace photo (local file)"
+    style="
+      width:180px;
+      height:180px;
+      border-radius:50%;
+      border:3px solid #ff4d6d;
+      object-fit:cover;
+      image-rendering:high-quality;
+      box-shadow:0 0 15px rgba(255,77,109,0.4);
+      transition:all 0.4s ease;
+      cursor:pointer;
+      background-color:#fff;
+      animation:glowPulse 3s ease-in-out infinite;
+    "
+  >
+  <p style="color:#555; font-size:0.95rem; margin-top:10px;">
+    Ezra Ngetich Korgoren
+  </p>
+</div>
+
+<style>
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(255, 77, 109, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 77, 109, 0.7);
+  }
+}
+</style>
+
+
+      <h1 class="display-5 text-white">Ezra Ngetich Korgoren</h1>
+      <div class="meta small mb-2">Born 21 July 2003</div>
+      <div class="lead small mb-2">Second Year • BSc Information Technology — University of Eldoret</div>
+
+      <div style="font-size:1.02rem">
+        <span>I build things with code, music, and heart —</span>
+        <span class="typewriter" id="typewriter">a web & software learner</span>
+      </div>
+
+      <div class="mt-4 d-flex justify-content-center gap-2 cta">
+      </div>
+    </div>
+  </header>
+
+  <main class="container my-5">
+
+    <!-- ABOUT / EARLY LIFE -->
+    <section id="about" class="early mb-5 p-4">
+      <h2 class="section-title">About & Early Life</h2>
+      <div class="mt-3 dropcap">
+        <p>
+          I was born on <strong>21 July 2003</strong>. Being the lastborn meant being cradled by family warmth and taught quiet responsibility.
+        </p>
+        <p>
+          My childhood had many small rhythms — early chores, stories around the table, and evenings where music made the home bright. Those moments taught me kindness, patience, and a curiosity that later found its way to technology and creative work.
+        </p>
+
+        <div class="stamp mt-3">Lastborn • Family-first • Curious by nature</div>
+      </div>
+    </section>
+
+    <!-- PRIMARY SCHOOL -->
+    <section id="primary" class="mb-5">
+      <h2 class="section-title">Primary Education — Bright & Curious</h2>
+      <div class="primary mt-3">
+        <div class="school-card" data-aos="fade-up">
+          <div class="icon"><i class="bi bi-book"></i></div>
+          <h5>Kataret Primary School (2008 — Class 3)</h5>
+          <p>Started primary school in 2008. These were discovery years — learning reading, arithmetic, and building friendships while exploring curiosity for hands-on making.</p>
+        </div>
+
+        <div class="school-card" data-aos="fade-up" data-aos-delay="80">
+          <div class="icon"><i class="bi bi-pencil"></i></div>
+          <h5>Lelbarak Primary School (Class 4 — KCPE)</h5>
+          <p>Transferred after Class 3 and completed KCPE at Lelbarak. I matured academically and socially, developing steady study habits and teamwork skills.</p>
+        </div>
+
+        <div class="school-card" data-aos="fade-up" data-aos-delay="160">
+          <div class="icon"><i class="bi bi-people"></i></div>
+          <h5>Lessons Learned</h5>
+          <p>Curiosity, steady effort, and small wins formed the foundation that later supported my projects and creative experiments with code.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECONDARY -->
+    <section id="secondary" class="secondary mb-5">
+      <h2 class="section-title text-white">Secondary School — Trials & Comeback</h2>
+
+      <div class="row mt-3 g-3">
+        <div class="col-md-7">
+          <div class="panel p-3">
+            <h5 class="text-white">Kiproroget Secondary (Form 1 — 2022)</h5>
+            <p class="text-white-75">I joined Kiproroget with curiosity and hope. I enjoyed subjects requiring logic and structure — the beginnings of an interest that would lead me to IT.</p>
+            <p class="text-white-75">In 2022 I faced personal challenges that affected my focus and performance. It was a difficult season that taught me resilience and perspective.</p>
+          </div>
+        </div>
+
+        <div class="col-md-5 d-flex flex-column gap-3">
+          <div class="card-warning">
+            <h6><i class="bi bi-exclamation-circle-fill me-2"></i> 2022 — Challenge & Setback</h6>
+            <p class="mb-0">A season of hardship that tested my priorities and study routine.</p>
+          </div>
+
+          <div class="card-success">
+            <h6><i class="bi bi-check-circle-fill me-2"></i> 2023 — Rebuild & Resit</h6>
+            <p class="mb-0">Encouraged by family and friends, I resat the KCSE at Olorukoti Secondary. With a rebuilt routine and steady progress, I reclaimed my academic path — a comeback that changed everything.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- UNIVERSITY ERA -->
+    <section id="university" class="uni mb-5 p-4">
+      <div class="d-flex justify-content-between align-items-start flex-column flex-md-row gap-3">
+        <div class="flex-fill">
+          <h3>University of Eldoret</h3>
+          <div class="mt-2">
+            <span class="badge-accent">Second Year • BSc Information Technology</span>
+          </div>
+
+          <p class="mt-3" style="color:rgba(255,255,255,0.92)">
+            After the recovery and success in my resit, I applied and secured a place at the <strong>University of Eldoret</strong>, where I am currently studying for a <strong>Bachelor of Science in Information Technology</strong>.
+            University life has been a season of growth — academically, personally, and creatively. I'm learning practical programming, databases, networking basics, and developing simple full-stack prototypes.
+          </p>
+
+          <p style="color:rgba(255,255,255,0.85)">
+            The university era for me is about turning lessons into practice: late-night labs, group projects, debugging code, and small wins that build confidence. It is also a place where resilience became routine — I learned how to keep showing up, even when things felt heavy.
+          </p>
+
+          <div class="timeline-uni">
+            <div class="uni-item">
+              <strong>Academic Focus:</strong> Programming fundamentals, web development, database systems, and systems understanding.
+            </div>
+            <div class="uni-item">
+              <strong>Practical Work:</strong> Small web projects, portfolio site, and prototypes — applying classroom knowledge to real problems.
+            </div>
+            <div class="uni-item">
+              <strong>Growth:</strong> Teamwork, version control (Git), and gradual confidence in solving development problems.
+            </div>
+          </div>
+        </div>
+
+        <div class="flex-fill">
+          <div class="glass p-3" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);">
+            <h5 class="mb-2" style="color:var(--gold)">Skills & Tools</h5>
+            <div class="mb-2 small">HTML & CSS <span class="text-muted ms-2">Comfortable</span></div>
+            <div class="progress mb-3"><div class="progress-bar" style="width:0%" data-target="85"></div></div>
+
+            <div class="mb-2 small">JavaScript <span class="text-muted ms-2">Learning & applying</span></div>
+            <div class="progress mb-3"><div class="progress-bar" style="width:0%" data-target="70"></div></div>
+
+            <div class="mb-2 small">Backend Concepts <span class="text-muted ms-2">Basics</span></div>
+            <div class="progress mb-3"><div class="progress-bar" style="width:0%" data-target="45"></div></div>
+
+            <div class="mb-2 small">Git & Collaboration <span class="text-muted ms-2">Working knowledge</span></div>
+            <div class="progress mb-0"><div class="progress-bar" style="width:0%" data-target="60"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="mb-5">
+      <h2 class="section-title">Projects & Creative Work</h2>
+      <div class="projects mt-3">
+
+        <div class="flip-card" data-aos="zoom-in">
+          <div class="flip-inner">
+            <div class="flip-front p-3">
+              <h5>Portfolio & Bio Site</h5>
+              <p class="small text-muted">This responsive biography site — clean, animated, and personal.</p>
+            </div>
+            <div class="flip-back p-3">
+              <h6>Details</h6>
+              <p class="small">Built with HTML, CSS, Bootstrap, and custom JS. Designed to tell a story with heart and clarity.</p>
+              <a class="btn btn-sm btn-outline-light mt-2" href="#about">View</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card" data-aos="zoom-in" data-aos-delay="80">
+          <div class="flip-inner">
+            <div class="flip-front p-3">
+              <h5>Three.js Looping Visual</h5>
+              <p class="small text-muted">Animated equalizers, neon waves, and particles for intros.</p>
+            </div>
+            <div class="flip-back p-3">
+              <h6>Tech</h6>
+              <p class="small">Three.js, GLSL shaders, audio analysis.</p>
+              <a class="btn btn-sm btn-outline-light mt-2" href="#">Demo</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card" data-aos="zoom-in" data-aos-delay="160">
+          <div class="flip-inner">
+            <div class="flip-front p-3">
+              <h5>Frontend Betting UI (Learning)</h5>
+              <p class="small text-muted">A Betika-inspired frontend UI for learning interactive state.</p>
+            </div>
+            <div class="flip-back p-3">
+              <h6>Status</h6>
+              <p class="small">Prototype — front-end only, no real betting features.</p>
+              <a class="btn btn-sm btn-outline-light mt-2" href="#">Code</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- HOBBIES -->
+    <section id="hobbies" class="mb-5">
+      <h2 class="section-title">Hobbies & How I Recharge</h2>
+
+      <div class="d-flex gap-3 mt-3 flex-column flex-md-row">
+        <div class="hobby-slide hobby-1 flex-fill p-3" style="border-radius:12px">
+          <div>
+            <h5>Guitar</h5>
+            <p class="small">Playing guitar helps me unwind and keeps creativity alive — composing melodies and learning chords.</p>
+          </div>
+        </div>
+
+        <div class="hobby-slide hobby-2 flex-fill p-3" style="border-radius:12px">
+          <div>
+            <h5>Creative Coding</h5>
+            <p class="small">Interactive pages, visualizers, and small games — where art and code meet.</p>
+          </div>
+        </div>
+
+        <div class="hobby-slide hobby-3 flex-fill p-3" style="border-radius:12px">
+          <div>
+            <h5>Campus Life</h5>
+            <p class="small">Group projects, study sessions, and simple campus moments that shape the future.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Full Image Section -->
+<div class="full-image-section">
+  <img src="cum.jpeg" alt="Campus" class="full-img">
+</div>
+
+        </div>
+      </div>
+
+      <!-- Lightbox Modal -->
+      <div class="modal fade" id="modalGallery" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-body p-0">
+              <img src="" id="modalImg" class="img-fluid w-100 rounded" alt="Expanded">
+            </div>
+            <div class="modal-footer justify-content-center border-0">
+              <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUOTES -->
+    <section id="quotes" class="mb-5">
+      <h2 class="section-title">Words I Live By</h2>
+      <div class="quote-hero mt-3">
+        <blockquote>“Even in the darkest chapters, hope can rewrite the story.”</blockquote>
+        <div class="q-author mt-2">— Ezra Ngetich Korgoren</div>
+      </div>
+    </section>
+
+  
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container text-center">
+      <div>
+        <strong style="color:var(--gold)">Ezra Ngetich Korgoren</strong> — © 2025 • Built with curiosity & code
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll top -->
+  <button id="scrollTop" class="btn btn-primary rounded-circle" style="position:fixed;right:20px;bottom:20px;display:none;z-index:1200"><i class="bi bi-arrow-up"></i></button>
+
+  <!-- Dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- html2pdf for download -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+
+  <script>
+    // ---------------------------
+    // Typewriter effect (hero)
+    // ---------------------------
+    (function(){
+      const words = ["a web & software learner", "a guitarist", "a believer in second chances"];
+      const el = document.getElementById('typewriter');
+      let i=0, j=0, forward=true, wait=1500;
+      function tick(){
+        const w = words[i];
+        if(forward){
+          j++;
+          el.textContent = w.substring(0,j);
+          if(j===w.length){ forward=false; setTimeout(tick, wait); return;}
+        } else {
+          j--;
+          el.textContent = w.substring(0,j);
+          if(j===0){ forward=true; i=(i+1)%words.length;}
+        }
+        setTimeout(tick, forward?70:30);
+      }
+      tick();
+    })();
+
+    // ---------------------------
+    // Avatar quick-replace (local file)
+    // ---------------------------
+    const avatar = document.getElementById('profileAvatar');
+    avatar.style.cursor = 'pointer';
+    avatar.title = 'Click to replace photo (local file)';
+    avatar.addEventListener('click', ()=> {
+      const input = document.createElement('input');
+      input.type='file'; input.accept='image/*';
+      input.onchange = e => {
+        const f = e.target.files[0];
+        if(!f) return;
+        avatar.src = URL.createObjectURL(f);
+      };
+      input.click();
+    });
+
+    // ---------------------------
+    // Progress bars animate on scroll
+    // ---------------------------
+    const progressBars = document.querySelectorAll('.progress-bar');
+    const progObserver = new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          const el = entry.target;
+          const target = el.getAttribute('data-target') || 60;
+          el.style.width = target + '%';
+          progObserver.unobserve(el);
+        }
+      });
+    }, {threshold:0.45});
+    progressBars.forEach(pb => progObserver.observe(pb));
+
+    // ---------------------------
+    // Gallery modal
+    // ---------------------------
+    const modal = document.getElementById('modalGallery');
+    if(modal){
+      modal.addEventListener('show.bs.modal', function(e){
+        const trigger = e.relatedTarget;
+        const src = trigger.getAttribute('data-img');
+        document.getElementById('modalImg').src = src;
+      });
+    }
+
+    // ---------------------------
+    // Scroll top button
+    // ---------------------------
+    const scrollTopBtn = document.getElementById('scrollTop');
+    window.addEventListener('scroll', ()=>{
+      if(window.scrollY > 300) scrollTopBtn.style.display = 'block';
+      else scrollTopBtn.style.display = 'none';
+    });
+    scrollTopBtn.addEventListener('click', ()=> window.scrollTo({top:0,behavior:'smooth'}));
+
+    // ---------------------------
+    // Simple fade-in (AOS-lite)
+    // ---------------------------
+    const fadeEls = document.querySelectorAll('[data-aos]');
+    const fadeObserver = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          const delay = Number(entry.target.getAttribute('data-aos-delay')||0);
+          setTimeout(()=>entry.target.classList.add('aos-animated'), delay);
+          fadeObserver.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.12});
+    fadeEls.forEach(el=>{
+      el.classList.add('aos-init');
+      fadeObserver.observe(el);
+    });
+    (function addAOSStyles(){
+      const s = document.createElement('style');
+      s.innerHTML = `
+        .aos-init{opacity:0;transform:translateY(16px);transition:all .85s cubic-bezier(.2,.9,.2,1) !important}
+        .aos-animated{opacity:1;transform:none !important}
+      `;
+      document.head.appendChild(s);
+    })();
+
+  </script>
+</body>
+</html>
